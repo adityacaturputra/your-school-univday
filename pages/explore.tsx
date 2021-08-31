@@ -1,80 +1,11 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import Fade from 'react-reveal/Fade';
+import universities from './api/dataBoongBoongan';
 
 const Explore: NextPage = () => {
   const [DetailUniversity, setDetailUniversity] = useState(0);
-  const universities = [
-    {
-      name: 'Universitas Indonesia',
-      logo: '1'
-      
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '2'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '3'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '4'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '5'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '6'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '7'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '8'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '9'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '10'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '11'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '12'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '13'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '14'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '15'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '16'
-    },
-    {
-      name: 'Universitas Indonesia',
-      logo: '17'
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen bg-hero bg-center bg-cover bg-fixed">

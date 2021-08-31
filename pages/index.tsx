@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="h-screen bg-hero bg-center bg-cover ">
-      <div className={`h-screen bg-black ${QtaClicked ? 'bg-opacity-0' : 'bg-opacity-80'} flex flex-col lg:justify-center md:justify-center justify-evenly transition duration-1000`}>
+      <div className={`h-screen ${!QtaClicked && 'bg-opacity-80 bg-black'} flex flex-col lg:justify-center md:justify-center justify-evenly transition duration-500`}>
         { !QtaClicked && 
         <>
           <p className="text-center text-white text-4xl pb-10 ">Selamat Datang di <span className="text-purple-400">your-school-univday</span></p>

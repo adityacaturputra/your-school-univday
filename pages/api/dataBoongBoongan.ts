@@ -1,72 +1,1557 @@
 const universities = [
   {
     name: 'Universitas Indonesia',
-    logo: '1'
-      
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '2'
+    logo: '2',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '3'
+    logo: '3',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '4'
+    logo: '4',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '5'
+    logo: '5',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '6'
+    logo: '6',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '7'
+    logo: '7',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '8'
+    logo: '8',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '9'
+    logo: '9',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '10'
+    logo: '10',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '11'
+    logo: '11',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '12'
+    logo: '12',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '13'
+    logo: '13',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '14'
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '15'
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '16'
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
   {
     name: 'Universitas Indonesia',
-    logo: '17'
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
+  },
+  {
+    name: 'Universitas Indonesia',
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
+  },
+  {
+    name: 'Universitas Indonesia',
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
+  },
+  {
+    name: 'Universitas Indonesia',
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
+  },
+  {
+    name: 'Universitas Indonesia',
+    logo: '1',
+    content: [
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+      {
+        name: 'content name',
+        jeroanKonten: 'content jeroan'
+      },
+    ]
   },
 ];
 

@@ -20,15 +20,15 @@ const Explore: NextPage = () => {
           <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap">
             {universities.map((data, key) => (
               <Fade right delay={50*key} key={key}>
-                <a className="inline-block bg-white m-2 sm:m-3 md:4 rounded cursor-pointer" style={{height: '10vh', width: '10vh'}} onClick={()=> setDetailUniversityIndex(key)}>logo: {key + 1}</a>
+                <a className="inline-block bg-white m-2 sm:m-3 md:m-4 rounded cursor-pointer" style={{height: '10vh', width: '10vh'}} onClick={()=> setDetailUniversityIndex(key)}>logo: {key + 1}</a>
               </Fade>
             ))}
           </div>
-          <div style={{height: '85vh', position: 'relative'}}>
+          <div style={{height: '83vh', position: 'relative'}}>
             <div className="flex flex-wrap justify-evenly" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}} ref={content}>
               {
                 universities[DetailUniversityIndex].content.map((konten, key) => (
-                  <div key={key} className="max-w-sm md:max-h-96 overflow-auto bg-white my-4 mx-2 p-3 rounded">
+                  <div key={key} className="max-w-sm md:max-h-96 overflow-auto bg-white my-4 mx-1 p-3 rounded">
                     <h1 className="text-xl">{konten.name}: {key+1}</h1>
                     <p className="text-lg">{konten.jeroanKonten}: {key+1}, universitas ke: {DetailUniversityIndex + 1} </p>
                     <p className="text-base">
@@ -39,6 +39,7 @@ const Explore: NextPage = () => {
               }
             </div>
           </div>
+          <h1 className="text-lg text-center bg-black bg-opacity-50 text-white mx-1 md:mx-0">{universities[DetailUniversityIndex].name}</h1>
         </div>
       </Fade> 
       

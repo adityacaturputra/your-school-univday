@@ -28,7 +28,7 @@ const Explore: NextPage = () => {
             <div className="flex flex-wrap justify-evenly" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}} ref={content}>
               {
                 universities[DetailUniversityIndex].content.map((konten, key) => (
-                  <div key={key} className="max-w-sm sm:max-h-96 overflow-auto bg-white my-4 mx-2 p-3 rounded">
+                  <div key={key} className="max-w-sm md:max-h-96 overflow-auto bg-white my-4 mx-2 p-3 rounded">
                     <h1 className="text-xl">{konten.name}: {key+1}</h1>
                     <p className="text-lg">{konten.jeroanKonten}: {key+1}, universitas ke: {DetailUniversityIndex + 1} </p>
                     <p className="text-base">

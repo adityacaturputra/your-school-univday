@@ -963,7 +963,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '14',
     content: [
       {
         name: 'content name',
@@ -1037,7 +1037,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '15',
     content: [
       {
         name: 'content name',
@@ -1111,7 +1111,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '16',
     content: [
       {
         name: 'content name',
@@ -1185,7 +1185,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '17',
     content: [
       {
         name: 'content name',
@@ -1259,7 +1259,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '18',
     content: [
       {
         name: 'content name',
@@ -1333,7 +1333,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '19',
     content: [
       {
         name: 'content name',
@@ -1407,7 +1407,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '20',
     content: [
       {
         name: 'content name',
@@ -1481,7 +1481,7 @@ const universities = [
   },
   {
     name: 'Universitas Indonesia',
-    logo: '1',
+    logo: '21',
     content: [
       {
         name: 'content name',

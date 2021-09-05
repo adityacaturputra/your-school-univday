@@ -28,7 +28,9 @@ const Explore: NextPage = (props : any) => {
             {dataUniversity.university.map((data :any, key : any) => (
               <Fade right delay={50*key} key={data._id}>
                 <div className="inline-block bg-white m-2 sm:m-3 md:m-4 rounded cursor-pointer p-1 bg-opacity-90" style={{height: '10vh', width: '10vh'}} >
-                  <Images src={`https://admin-your-school-univday.herokuapp.com/${data.imageId.imageUrl}`} width="100%" height="100%" onClick={()=> setDetailUniversityIndex(key)}/>
+                  <Images
+                    src={`/api/imageproxy?url=${encodeURIComponent(data.imageId.imageUrl)}`}
+                    width="100%" height="100%" onClick={()=> setDetailUniversityIndex(key)}/>
                 </div>
               </Fade>
             ))}
@@ -39,8 +41,10 @@ const Explore: NextPage = (props : any) => {
                 dataUniversity.university[DetailUniversityIndex].contentId.map((konten : any, key : any) => (
                   <div key={konten._id} className="max-w-sm md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
                     <h1 className="text-xl text-center font-bold mb-3">{konten.name}</h1>
-                    <p> {HTMLReactParser(konten.jeroanKonten)} </p>
-                  </div>
+                    <div>
+                      {HTMLReactParser(konten.jeroanKonten)}
+                    </div>
+                  </div> 
                 ))
               }
             </div>

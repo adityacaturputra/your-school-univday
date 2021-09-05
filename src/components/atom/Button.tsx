@@ -1,6 +1,4 @@
 import { NextPage } from 'next';
-import { useRouter } from 'next/dist/client/router';
-import { useState } from 'react';
 
 interface Props {
     title : string,

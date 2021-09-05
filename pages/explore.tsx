@@ -39,7 +39,7 @@ const Explore: NextPage = (props : any) => {
             <div className="flex flex-wrap justify-evenly scrollup" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}}>
               {
                 dataUniversity.university[DetailUniversityIndex].contentId.map((konten : any, key : any) => (
-                  <div key={konten._id} className="max-w-sm md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
+                  <div key={konten._id} className="max-w-lg md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
                     <h1 className="text-xl text-center font-bold mb-3">{konten.name}</h1>
                     <div>
                       {HTMLReactParser(konten.jeroanKonten)}

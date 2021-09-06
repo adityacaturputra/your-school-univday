@@ -7,8 +7,13 @@ import HTMLReactParser from 'html-react-parser';
 const Explore: NextPage = (props : any) => {
   const {dataUniversity} = props;
   const [DetailUniversityIndex, setDetailUniversityIndex] = useState(0);
+  const [fadeAnimation, setFadeAnimation] = useState(true);
 
   useEffect(() => {
+    setFadeAnimation(false);
+    setTimeout(() => {
+      setFadeAnimation(true);
+    }, 0);
     if (process.browser) {
       const scrollableElements = document.getElementsByClassName('scrollup');
       for (let i = 0; i < scrollableElements.length; i++) {
@@ -35,20 +40,22 @@ const Explore: NextPage = (props : any) => {
               </Fade>
             ))}
           </div>
-          <div style={{height: '83vh', position: 'relative'}}>
-            <div className="flex flex-wrap justify-evenly scrollup" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}}>
-              {
-                dataUniversity.university[DetailUniversityIndex].contentId.map((konten : any, key : any) => (
-                  <div key={konten._id} className="max-w-lg md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
-                    <h1 className="text-xl text-center font-bold mb-3">{konten.name}</h1>
-                    <div>
-                      {HTMLReactParser(konten.jeroanKonten)}
-                    </div>
-                  </div> 
-                ))
-              }
+          <Fade when={fadeAnimation}>
+            <div style={{height: '83vh', position: 'relative'}}>
+              <div className="flex flex-wrap justify-evenly scrollup" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}}>
+                {
+                  dataUniversity.university[DetailUniversityIndex].contentId.map((konten : any, key : any) => (
+                    <div key={konten._id} className="max-w-lg md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
+                      <h1 className="text-xl text-center font-bold mb-3">{konten.name}</h1>
+                      <div>
+                        {HTMLReactParser(konten.jeroanKonten)}
+                      </div>
+                    </div> 
+                  ))
+                }
+              </div>
             </div>
-          </div>
+          </Fade>
           <h1 className="text-lg text-center bg-white bg-opacity-50 text-black font-semibold mx-1 md:mx-0">{dataUniversity.university[DetailUniversityIndex].name}</h1>
         </div>
       </Fade> 

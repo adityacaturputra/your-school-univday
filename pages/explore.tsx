@@ -64,7 +64,7 @@ const Explore: NextPage<Props> = ({university}) => {
 
           </div>
           <Fade bottom when={fadeAnimation}>
-            <div style={{height: '83vh', position: 'relative'}}>
+            <div className="h-[83vh] relative">
               <div className="flex flex-wrap justify-evenly scrollup max-h-[100%] overflow-y-auto overflow-x-hidden">
 
                 {

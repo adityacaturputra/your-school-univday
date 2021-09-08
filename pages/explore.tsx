@@ -4,28 +4,45 @@ import { useState, useEffect} from 'react';
 import Fade from 'react-reveal/Fade';
 import HTMLReactParser from 'html-react-parser';
 
-const Explore: NextPage = (props : any) => {
-  const {dataUniversity} = props;
-  const [DetailUniversityIndex, setDetailUniversityIndex] = useState(0);
+interface Content {
+  _id: string,
+  name: string,
+  jeroanKonten: string,
+}
+
+interface Image {
+  _id: string,
+  imageUrl: string
+}
+
+interface University {
+  _id: string,
+  name: string,
+  imageId: Image,
+  contentId: Content[]
+}
+
+interface Props {
+  university: University[]
+}
+
+const Explore: NextPage<Props> = ({university}) => {
+  const [DetailUniversityIndex, setDetailUniversityIndex] = useState<number>(0);
   const [fadeAnimation, setFadeAnimation] = useState(true);
-  const handleDetailUniversityIndex = (index : any) => {
+  const handleDetailUniversityIndex = (index : number) => {
     if (index === DetailUniversityIndex) return;
     setFadeAnimation(false);
     setDetailUniversityIndex(index);
+  };
+  const scrollup = (scrollableElements: HTMLCollectionOf<Element>) => {
+    if (process.browser) Array.from(scrollableElements).forEach(element => element.scrollTo({top: 0}));
   };
 
   useEffect(() => {
     setTimeout(() => {
       setFadeAnimation(true);
-    }, 0);
-    if (process.browser) {
-      const scrollableElements = document.getElementsByClassName('scrollup');
-      for (let i = 0; i < scrollableElements.length; i++) {
-        scrollableElements[i].scrollTo({
-          top: 0,
-        });
-      }
-    }
+      scrollup(document.getElementsByClassName('scrollup'));
+    }, 600);
   }, [DetailUniversityIndex]);
 
   return (
@@ -33,21 +50,25 @@ const Explore: NextPage = (props : any) => {
       <Fade>
         <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
           <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap">
-            {dataUniversity.university.map((data :any, key : any) => (
-              <Fade right delay={50*key} key={data._id} when={key !== DetailUniversityIndex}>
-                <div className="inline-block bg-white m-2 sm:m-3 md:m-4 rounded cursor-pointer p-1 bg-opacity-90" style={{height: '10vh', width: '10vh'}} >
+
+            {university.map((data: University, index: number) => (
+              <Fade right delay={50*index} key={data._id} when={index !== DetailUniversityIndex}>
+                <div className="inline-block bg-white m-2 sm:m-3 md:m-4 rounded cursor-pointer p-1 bg-opacity-90 h-[10vh] w-[10vh]" >
                   <Images
                     src={`/api/imageproxy?url=${encodeURIComponent(data.imageId.imageUrl)}`}
-                    width="100%" height="100%" onClick={()=> handleDetailUniversityIndex(key)}/>
+                    width="100%" height="100%" onClick={()=> handleDetailUniversityIndex(index)}
+                  />
                 </div>
               </Fade>
             ))}
+
           </div>
           <Fade bottom when={fadeAnimation}>
             <div style={{height: '83vh', position: 'relative'}}>
-              <div className="flex flex-wrap justify-evenly scrollup" style={{maxHeight:'100%', overflowY:'auto', overflowX: 'hidden'}}>
+              <div className="flex flex-wrap justify-evenly scrollup max-h-[100%] overflow-y-auto overflow-x-hidden">
+
                 {
-                  dataUniversity.university[DetailUniversityIndex].contentId.map((konten : any, key : any) => (
+                  university[DetailUniversityIndex].contentId.map((konten: Content) => (
                     <div key={konten._id} className="max-w-lg md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">
                       <h1 className="text-xl text-center font-bold mb-3">{konten.name}</h1>
                       <div>
@@ -56,12 +77,13 @@ const Explore: NextPage = (props : any) => {
                     </div> 
                   ))
                 }
+
               </div>
             </div>
           </Fade>
           <h1 className="text-lg text-center bg-white bg-opacity-50 text-black font-semibold mx-1 md:mx-0">
             <Fade when={fadeAnimation}>
-              {dataUniversity.university[DetailUniversityIndex].name}
+              {university[DetailUniversityIndex].name}
             </Fade>
           </h1>
         </div>
@@ -76,7 +98,7 @@ export async function getServerSideProps() {
   const dataUniversity = await res.json();
   return {
     props : {
-      dataUniversity,
+      university: dataUniversity.university,
     }
   };
 }

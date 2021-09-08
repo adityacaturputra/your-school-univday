@@ -17,10 +17,10 @@ const Home: NextPage = () => {
     <div className="h-screen bg-hero bg-center bg-cover">
       <div className={'h-screen bg-opacity-80 bg-black flex flex-col justify-center'}>
         <Fade bottom when={!QtaClicked}>
-          <Button title="Web Utama" className="text-center flex justify-center mt-5" onClick={() => handleButtonClicked('/start')} />
-          <Button title="Pengenalan Panitia" className="text-center flex justify-center mt-5" onClick={() => handleButtonClicked('/intro')} />
-          <Button title="Jadwal dan Acara" className="text-center flex justify-center mt-5" onClick={() => handleButtonClicked('/schedule')} />
-          <Button title="Contact Person" className="text-center flex justify-center mt-5" onClick={() => handleButtonClicked('/contact')} />
+          <Button title="Web Utama" className="text-center flex justify-center mt-5 mx-[10vw]" onClick={() => handleButtonClicked('/start')} />
+          <Button title="Pengenalan Panitia" className="text-center flex justify-center mt-5 mx-[10vw]" onClick={() => handleButtonClicked('/intro')} />
+          <Button title="Jadwal dan Acara" className="text-center flex justify-center mt-5 mx-[10vw]" onClick={() => handleButtonClicked('/schedule')} />
+          <Button title="Contact Person" className="text-center flex justify-center mt-5 mx-[10vw]" onClick={() => handleButtonClicked('/contact')} />
         </Fade>
         <Fade bottom when={QtaClicked}>
           <div className="text-center">

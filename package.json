@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@emotion/core": "10.1.1",
-    "@emotion/react": "^11.4.1",
     "html-react-parser": "^1.2.8",
     "next": "11.1.0",
     "react": "17.0.2",

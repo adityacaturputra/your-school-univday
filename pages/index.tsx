@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import { useState } from 'react';
-import Button from '../src/components/atom/Button';
+import Button from '../src/components/atoms/Button';
 import Fade from 'react-reveal/Fade';
 import { BallBeat } from 'react-pure-loaders';
 

@@ -72,7 +72,7 @@ export async function getServerSideProps() {
     return {
       props : {
         university: null,
-        errorMessage: error.message
+        errorMessage: (error as any).message
       }
     };
   }

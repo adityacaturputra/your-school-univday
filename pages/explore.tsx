@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import { useState, useEffect} from 'react';
 import Fade from 'react-reveal/Fade';
 import { University} from '../src/types/UniversityTable';
@@ -35,25 +36,30 @@ const Explore: NextPage<Props> = (props) => {
   }, [DetailUniversityIndex]);
 
   return (
-    <div className="min-h-screen bg-hero bg-center bg-cover bg-fixed">
-      <Fade>
-        {
-          university ? 
-            <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
-              <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
-              <Fade bottom when={fadeAnimation}>
-                <Contents data={university} currentIndex={DetailUniversityIndex} />
-              </Fade>
-              <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
-            </div>
-            : 
-            <div>
-              <Heading animation={fadeAnimation} title={'Gagal mendapatkan data'} />
-              <Heading animation={fadeAnimation} title={props.errorMessage} />
-            </div>
-        }
-      </Fade> 
-    </div>
+    <>
+      <Head>
+        <title>Univday | Explore</title>
+      </Head>
+      <div className="min-h-screen bg-hero bg-center bg-cover bg-fixed">
+        <Fade>
+          {
+            university ? 
+              <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
+                <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
+                <Fade bottom when={fadeAnimation}>
+                  <Contents data={university} currentIndex={DetailUniversityIndex} />
+                </Fade>
+                <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
+              </div>
+              : 
+              <div>
+                <Heading animation={fadeAnimation} title={'Gagal mendapatkan data'} />
+                <Heading animation={fadeAnimation} title={props.errorMessage} />
+              </div>
+          }
+        </Fade> 
+      </div>
+    </>
   );
 };
 

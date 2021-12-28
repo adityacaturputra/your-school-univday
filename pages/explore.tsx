@@ -13,7 +13,8 @@ interface Props {
 }
 
 const Explore: NextPage<Props> = (props) => {
-  const {university} = props;
+  const [university, setuniversity] = useState<University[]>();
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [DetailUniversityIndex, setDetailUniversityIndex] = useState<number>(0);
   const [fadeAnimation, setFadeAnimation] = useState(true);
   const handleDetailUniversityIndex = (index : number) => {
@@ -35,6 +36,25 @@ const Explore: NextPage<Props> = (props) => {
     }, 600);
   }, [DetailUniversityIndex]);
 
+  const getData = async () => {
+    try {
+      const res = await fetch(
+        'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
+      );
+      console.log(res);
+      const dataUniversity = await res.json();
+      const university : University[] = dataUniversity.university;
+      setuniversity(university);
+      
+    } catch (error) {
+      setErrorMessage((error as any).message);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <Head>
@@ -52,10 +72,14 @@ const Explore: NextPage<Props> = (props) => {
                 <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
               </div>
               : 
-              <div>
-                <Heading animation={fadeAnimation} title={'Gagal mendapatkan data'} />
-                <Heading animation={fadeAnimation} title={props.errorMessage} />
-              </div>
+              errorMessage ? 
+                <div>
+                  <Heading animation={fadeAnimation} title={'Gagal mendapatkan data'} />
+                  <Heading animation={fadeAnimation} title={errorMessage} />
+                </div>
+                :
+                <Heading animation={fadeAnimation} title={'Sedang me-load data'} />
+
           }
         </Fade> 
       </div>
@@ -63,25 +87,25 @@ const Explore: NextPage<Props> = (props) => {
   );
 };
 
-export async function getServerSideProps() {
-  try {
-    const res = await fetch(
-      'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
-    );
-    const dataUniversity = await res.json();
-    return {
-      props : {
-        university: dataUniversity.university,
-      }
-    };
-  } catch (error) {
-    return {
-      props : {
-        university: null,
-        errorMessage: (error as any).message
-      }
-    };
-  }
-}
+// export async function getServerSideProps() {
+//   try {
+//     const res = await fetch(
+//       'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
+//     );
+//     const dataUniversity = await res.json();
+//     return {
+//       props : {
+//         university: dataUniversity.university,
+//       }
+//     };
+//   } catch (error) {
+//     return {
+//       props : {
+//         university: null,
+//         errorMessage: (error as any).message
+//       }
+//     };
+//   }
+// }
 
 export default Explore;

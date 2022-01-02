@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useRef} from 'react';
 import Fade from 'react-reveal/Fade';
 import { University} from '../src/types/UniversityTable';
 import Logos from '../src/components/molecules/Logos';
@@ -33,7 +33,7 @@ const Explore: NextPage<Props> = (props) => {
     setTimeout(() => {
       setFadeAnimation(true);
       scrollup(document.getElementsByClassName('scrollup'));
-    }, 600);
+    }, 240);
   }, [DetailUniversityIndex]);
 
   const getData = async () => {
@@ -41,11 +41,9 @@ const Explore: NextPage<Props> = (props) => {
       const res = await fetch(
         'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
       );
-      console.log(res);
       const dataUniversity = await res.json();
       const university : University[] = dataUniversity.university;
       setuniversity(university);
-      
     } catch (error) {
       setErrorMessage((error as any).message);
     }
@@ -60,17 +58,22 @@ const Explore: NextPage<Props> = (props) => {
       <Head>
         <title>Univday | Explore</title>
       </Head>
-      <div className="min-h-screen bg-hero bg-center bg-cover bg-fixed">
+      {
+        university &&
+        <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
+      }
+      <div className="min-h-screen bg-hero bg-center bg-cover">
         <Fade>
           {
             university ? 
-              <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
-                <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
-                <Fade bottom when={fadeAnimation}>
-                  <Contents data={university} currentIndex={DetailUniversityIndex} />
-                </Fade>
-                <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
-              </div>
+              <Fade>
+                <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
+                  <Fade when={fadeAnimation}>
+                    <Contents data={university} currentIndex={DetailUniversityIndex} />
+                  </Fade>
+                  <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
+                </div>
+              </Fade>
               : 
               errorMessage ? 
                 <div>
@@ -79,7 +82,6 @@ const Explore: NextPage<Props> = (props) => {
                 </div>
                 :
                 <Heading animation={fadeAnimation} title={'Sedang me-load data'} />
-
           }
         </Fade> 
       </div>

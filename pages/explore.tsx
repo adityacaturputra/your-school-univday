@@ -59,32 +59,22 @@ const Explore: NextPage<Props> = (props) => {
         <title>Univday | Explore</title>
       </Head>
       {
-        university &&
-        <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
-      }
-      <div className="min-h-screen bg-hero bg-center bg-cover">
-        <Fade>
-          {
-            university ? 
-              <Fade>
-                <div className="h-screen md:bg-gradient-to-b bg-gradient-to-t from-black via-transparent to-transparent flex md:flex-col flex-col-reverse">
-                  <Fade when={fadeAnimation}>
-                    <Contents data={university} currentIndex={DetailUniversityIndex} />
-                  </Fade>
-                  <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
-                </div>
+        university ?
+          <>
+            <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
+            <Fade>
+              <Fade when={fadeAnimation}>
+                <Contents data={university} currentIndex={DetailUniversityIndex} />
               </Fade>
-              : 
-              errorMessage ? 
-                <div>
-                  <Heading animation={fadeAnimation} title={'Gagal mendapatkan data'} />
-                  <Heading animation={fadeAnimation} title={errorMessage} />
-                </div>
-                :
-                <Heading animation={fadeAnimation} title={'Sedang me-load data'} />
-          }
-        </Fade> 
-      </div>
+            </Fade>
+            <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
+          </>
+          : 
+          errorMessage ? 
+            <Heading animation={fadeAnimation} title={'Gagal mendapatkan data: ' + errorMessage} />
+            :
+            <Heading animation={fadeAnimation} title={'Sedang me-load data'} />
+      }
     </>
   );
 };

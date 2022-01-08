@@ -1,4 +1,3 @@
-import Images from 'next/image';
 import { University} from '../../types/UniversityTable';
 import Fade from 'react-reveal/Fade';
 

@@ -39,7 +39,7 @@ const Explore: NextPage<Props> = (props) => {
   const getData = async () => {
     try {
       const res = await fetch(
-        'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
+        'https://admin-your-school-univday.herokuapp.com/api/v1/university'
       );
       const dataUniversity = await res.json();
       const university : University[] = dataUniversity.university;

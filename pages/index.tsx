@@ -4,35 +4,35 @@ import { useRouter } from 'next/dist/client/router';
 import Button from '../src/components/atoms/Button';
 import Fade from 'react-reveal/Fade';
 
+const links = [
+  {
+    name: 'Explore',
+    href: '/start',
+    isExternal: false, 
+  },
+  {
+    name: 'Rasionalisasi',
+    href: 'https://upsnm-smansaka.web.app/',
+    isExternal: true, 
+  },
+  {
+    name: 'Pengenalan Panitia',
+    href: '/intro',
+    isExternal: false, 
+  },
+  {
+    name: 'Jadwal dan Acara',
+    href: '/schedule',
+    isExternal: false, 
+  },
+  {
+    name: 'Contact Person',
+    href: '/contact',
+    isExternal: false, 
+  },
+];
+
 const Home: NextPage = () => {
-  const links = [
-    {
-      name: 'Explore',
-      href: '/start',
-      isExternal: false, 
-    },
-    {
-      name: 'Rasionalisasi',
-      href: 'https://upsnm-smansaka.web.app/',
-      isExternal: true, 
-    },
-    {
-      name: 'Pengenalan Panitia',
-      href: '/intro',
-      isExternal: false, 
-    },
-    {
-      name: 'Jadwal dan Acara',
-      href: '/schedule',
-      isExternal: false, 
-    },
-    {
-      name: 'Contact Person',
-      href: '/contact',
-      isExternal: false, 
-    },
-    
-  ];
   const router = useRouter(); 
   const handleButtonClicked = (url : string, isEksternal = false) => () => {
     if (!isEksternal){ 

@@ -10,8 +10,8 @@ interface Props {
 const Contents : React.FC<Props> = ({data, currentIndex}) => {
   
   return (
-    <div className="h-[100vh] relative">
-      <div className="flex flex-wrap justify-evenly scrollup max-h-[100%] overflow-y-auto overflow-x-hidden md:pt-[12vh] pt-10 pb-[10vh] md:pb-[5vh]">
+    <div className="h-[108vh] relative">
+      <div className="flex flex-wrap justify-evenly scrollup max-h-[100%] overflow-y-auto overflow-x-hidden md:pt-[22vh] pt-[16vh] pb-[14vh] md:pb-[6vh]">
         {
           data[currentIndex].contentId.map((konten: Content) => (
             <div key={konten._id} className="max-w-lg md:max-h-96 overflow-auto bg-white bg-opacity-90 my-4 mx-1 p-3 rounded scrollup">

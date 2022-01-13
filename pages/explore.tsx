@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState, useEffect, useRef} from 'react';
 import Fade from 'react-reveal/Fade';
-import { University} from '../src/types/UniversityTable';
+import { University} from '../src/types/University';
 import Logos from '../src/components/molecules/Logos';
 import Contents from '../src/components/molecules/Contents';
 import Heading from '../src/components/molecules/Heading';

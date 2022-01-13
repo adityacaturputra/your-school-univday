@@ -1,4 +1,4 @@
-import { University} from '../../types/UniversityTable';
+import { University} from '../../types/University';
 import Fade from 'react-reveal/Fade';
 
 
@@ -11,7 +11,7 @@ interface Props {
 const Logos : React.FC<Props> = ({data, currentIndex, onClick}) => {
   
   return (
-    <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap z-10 fixed w-full bottom-0 md:bottom-auto md:top-10">
+    <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap z-10 fixed w-full bottom-0">
       {data.map((university: University, index: number) => (
         <>
           <Fade right delay={50*index} key={university._id} when={index !== currentIndex}>

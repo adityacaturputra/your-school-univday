@@ -1,5 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const links = [
   {
@@ -44,21 +45,21 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className="flex flex-wrap items-center justify-between px-2 py-[1px] bg-purple-500 mb-3 fixed top-0 z-20 w-screen">
+      <nav className="flex flex-wrap items-center justify-between px-2 py-[1px] bg-gradient-to-r from-purple-100 to-white-100 mb-3 fixed top-0 z-20 w-screen">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a
-              className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-              href="#pablo"
-            >
-                Univday-Smansaka
-            </a>
+            <Link href="/">
+              <a
+                className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-700"
+              >
+                <img src='./images/univday-logo.png' width={30} />
+              </a>
+            </Link>
             <button
-              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid rounded-full  block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none my-1 px-3 py-1 border-solid border-8 rounded-full  block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
-              <i className="fas fa-bars"></i>
             </button>
           </div>
           <div
@@ -70,13 +71,13 @@ export default function Navbar() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               {
-                links.map((link, index) => (
+                links.map((link) => (
                   <li className="nav-item" key={link.name}>
                     <a
-                      className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                      className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-500 hover:opacity-75"
                       onClick={handleButtonClicked(link.href, link.isExternal)}
                     >
-                      <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span className="ml-2 cursor-pointer">{link.name}</span>
+                      <span className="ml-2 cursor-pointer text-sm">{link.name}</span>
                     </a>
                   </li>
                 ))

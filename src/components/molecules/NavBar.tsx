@@ -50,9 +50,9 @@ export default function Navbar() {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
               <a
-                className="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-700"
+                className="text-lg font-bold leading-relaxed inline-block whitespace-nowrap uppercase text-gray-700"
               >
-                <img src='./images/univday-logo.png' width={30} />
+                <img src='./images/univday-logo.png' style={{height: '46px'}} />
               </a>
             </Link>
             <button

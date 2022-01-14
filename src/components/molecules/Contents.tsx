@@ -10,7 +10,7 @@ interface Props {
 const Contents : React.FC<Props> = ({data, currentIndex}) => {
   
   return (
-    <div className="h-[108vh] relative container mx-auto">
+    <div className="h-[110vh] mt-[16vh] relative container mx-auto">
       <div className="scrollup max-h-[100%] overflow-y-auto overflow-x-hidden pt-[16vh] pb-[14vh] md:pb-[6vh]">
         {
           data[currentIndex].contentId.map((konten: Content) => (

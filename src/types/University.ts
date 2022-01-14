@@ -29,3 +29,11 @@ export type Schedule = {
     timeStartDate: string,
     timeEndDate: string,
 }
+
+export type Contact = {
+    _id: string,
+    name: string,
+    contact: string,
+    universityId: UniversityWithoutContent | null,
+    userId: string | null
+}

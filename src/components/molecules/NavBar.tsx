@@ -56,7 +56,7 @@ export default function Navbar() {
               </a>
             </Link>
             <button
-              className="cursor-pointer text-xl leading-none my-1 px-3 py-1 border-solid border-8 rounded-full  block lg:hidden outline-none focus:outline-none"
+              className="cursor-pointer text-xl leading-none my-1 px-3 py-1 border-solid border-8 border-gray-700 rounded-full  block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >

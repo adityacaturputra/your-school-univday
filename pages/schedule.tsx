@@ -32,11 +32,14 @@ const formatDate = (strDate: string) => {
 
 const SchedulePage: NextPage = () => {
   const [schedules, setSchedules] = useState<Schedule[] | null>([]);
+  const [loading, setLoading] = useState<boolean>(false);
     
   useEffect(() => {
     const fetchSchedule = async () => {
+      setLoading(true);
       const fetchedSchedule = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/schedule');
       const {schedule : schedules} = await fetchedSchedule.json();
+      setLoading(false);
       setSchedules(schedules);
     };
     fetchSchedule();
@@ -72,7 +75,7 @@ const SchedulePage: NextPage = () => {
         }
       </ScrollableBox>
       {
-        !schedules?.length && <Heading animation={true} title='sedang me-load data' />
+        loading && <Heading animation={true} title='sedang me-load data' />
       }
     </>
   );

@@ -13,7 +13,8 @@ interface Props {
 }
 
 const Explore: NextPage<Props> = (props) => {
-  const [university, setuniversity] = useState<University[]>();
+  const [university, setuniversity] = useState<University[]>([]);
+  const [loading, setloading] = useState<boolean>();
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [DetailUniversityIndex, setDetailUniversityIndex] = useState<number>(0);
   const [fadeAnimation, setFadeAnimation] = useState(true);
@@ -38,11 +39,13 @@ const Explore: NextPage<Props> = (props) => {
 
   const getData = async () => {
     try {
+      setloading(true);
       const res = await fetch(
         'https://admin-your-school-univday.herokuapp.com/api/v1/university'
       );
       const dataUniversity = await res.json();
       const university : University[] = dataUniversity.university;
+      setloading(false);
       setuniversity(university);
     } catch (error) {
       setErrorMessage((error as any).message);
@@ -59,7 +62,7 @@ const Explore: NextPage<Props> = (props) => {
         <title>Univday | Explore</title>
       </Head>
       {
-        university ?
+        university?.length > 0 &&
           <>
             <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
             <Fade>
@@ -69,11 +72,14 @@ const Explore: NextPage<Props> = (props) => {
             </Fade>
             <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />
           </>
-          : 
-          errorMessage ? 
-            <Heading animation={fadeAnimation} title={'Gagal mendapatkan data: ' + errorMessage} />
-            :
-            <Heading animation={fadeAnimation} title={'Sedang me-load data'} />
+      }
+      {
+        errorMessage && 
+        <Heading animation={fadeAnimation} title={'gagal mendapatkan data: ' + errorMessage} />
+      }
+      {
+        loading &&
+        <Heading animation={fadeAnimation} title={'sedang me-load data'} />
       }
     </>
   );

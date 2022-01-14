@@ -9,11 +9,15 @@ import Heading from '../src/components/molecules/Heading';
 
 const ContactPage: NextPage = () => {
   const [contacts, setContacts] = useState<Contact[] | null>([]);
-    
+  const [loading, setLoading] = useState<boolean>(false);
+  
+  
   useEffect(() => {
     const fetchContact = async () => {
+      setLoading(true);
       const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
       const contacts = await fetchedContact.json();
+      setLoading(false);
       setContacts(contacts);
     };
     fetchContact();
@@ -43,7 +47,7 @@ const ContactPage: NextPage = () => {
         }
       </ScrollableBox>
       {
-        !contacts?.length && <Heading animation={true} title='sedang me-load data' />
+        loading && <Heading animation={true} title='sedang me-load data' />
       }
     </>
   );

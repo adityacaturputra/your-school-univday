@@ -7,6 +7,20 @@ import ScrollableBox from '../src/components/molecules/ScrollableBox';
 import { Contact } from '../src/types/University';
 import Heading from '../src/components/molecules/Heading';
 
+const formatIndoNumber = (contacts: Contact[]) : Contact[] => {
+  const formattedContacts : Contact[] = [];
+  contacts.forEach((contact) => {
+    const isFirstZeroEightNumber = contact.contact[0] === '0' && contact.contact[1] === '8';
+    if (isFirstZeroEightNumber) {
+      const newFormattedContact = `62${contact.contact.split('').slice(1, contact.contact.length).join('')}`;
+      contact.contact = newFormattedContact;
+    }
+    formattedContacts.push(contact);
+  });
+  
+  return formattedContacts;
+};
+
 const ContactPage: NextPage = () => {
   const [contacts, setContacts] = useState<Contact[] | null>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -16,9 +30,10 @@ const ContactPage: NextPage = () => {
     const fetchContact = async () => {
       setLoading(true);
       const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
-      const contacts = await fetchedContact.json();
+      const contacts : Contact[] = await fetchedContact.json();
+      const newFormattedContacts : Contact[] = formatIndoNumber(contacts); 
       setLoading(false);
-      setContacts(contacts);
+      setContacts(newFormattedContacts);
     };
     fetchContact();
   }, []);
@@ -34,13 +49,20 @@ const ContactPage: NextPage = () => {
         { 
           contacts?.map((contact, i) => (
             <Fade key={contact._id} delay={250*i}>
-              <div className='p-5 m-4 max-w-max flex cursor-default hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 bg-purple-200 rounded bg-opacity-30 hover:bg-opacity-100 text-2xl transition duration-500 ease-in-out shadow-inner'>
-                <div>
-                  <p className='text-xl font-bold text-gray-700'>{contact.name}</p>
-                  <a href={`https://wa.me/${contact.contact}`}>
-                    <p className='text-base text-gray-700'>{contact.contact}</p>
-                  </a>
-                </div>
+              <div className='p-5 m-4 max-w-max flex hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 bg-purple-200 rounded bg-opacity-30 hover:bg-opacity-100 text-2xl transition duration-500 ease-in-out shadow-inner'>
+                <a href={`https://wa.me/${contact.contact}`} target="_blank" rel="noopener noreferrer">
+                  <div>
+                    <p className='text-xl font-bold text-gray-700'>{contact.name}</p>
+                    <div className='flex'>
+                      <img className='mr-2 w-4' src="/images/user.svg" alt="contact-icon" />
+                      <p className='text-sm font-bold my-2 text-gray-500'>{contact.position}</p>
+                    </div>
+                    <div className='flex'>
+                      <img className='mr-2 w-4' src="/images/phone.svg" alt="contact-icon" />
+                      <p className='text-base font-semibold text-gray-700'>{contact.contact}</p>
+                    </div>
+                  </div>
+                </a>
               </div>
             </Fade>
           ))

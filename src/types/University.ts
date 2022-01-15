@@ -34,6 +34,7 @@ export type Contact = {
     _id: string,
     name: string,
     contact: string,
+    position: string,
     universityId: UniversityWithoutContent | null,
     userId: string | null
 }

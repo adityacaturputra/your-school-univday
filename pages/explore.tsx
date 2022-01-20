@@ -40,13 +40,21 @@ const Explore: NextPage<Props> = (props) => {
   const getData = async () => {
     try {
       setloading(true);
-      const res = await fetch(
-        'https://admin-your-school-univday.herokuapp.com/api/v1/university'
-      );
-      const dataUniversity = await res.json();
-      const university : University[] = dataUniversity.university;
+      const universityFromLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');
+      const isPassedOneHour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 3600000;
+      if (!universityFromLocalStorage.data || isPassedOneHour) {
+        const fetchedUniversity = await fetch(
+          'https://admin-your-school-univday.herokuapp.com/api/v1/university'
+        );
+        const dataUniversity = await fetchedUniversity.json();
+        const university : University[] = dataUniversity.university;
+        const localStorageContacts = {data: university, updatedAt: new Date()};
+        localStorage.setItem('university', JSON.stringify(localStorageContacts));
+        setuniversity(university);
+      } else {
+        setuniversity(universityFromLocalStorage.data);
+      }
       setloading(false);
-      setuniversity(university);
     } catch (error) {
       setErrorMessage((error as any).message);
     }

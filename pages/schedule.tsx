@@ -33,14 +33,29 @@ const formatDate = (strDate: string) => {
 const SchedulePage: NextPage = () => {
   const [schedules, setSchedules] = useState<Schedule[] | null>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
+
     
   useEffect(() => {
     const fetchSchedule = async () => {
-      setLoading(true);
-      const fetchedSchedule = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/schedule');
-      const {schedule : schedules} = await fetchedSchedule.json();
-      setLoading(false);
-      setSchedules(schedules);
+      try {
+        setLoading(true);
+        const schedulesFromLocalStorage = JSON.parse(localStorage.getItem('schedules') || '{}');
+        const isPassedOneHour = new Date().getTime() > new Date(schedulesFromLocalStorage?.updatedAt).getTime() + 3600000;
+        if (!schedulesFromLocalStorage.data || isPassedOneHour) {
+          const fetchedSchedule = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/schedule');
+          const {schedule : schedules} = await fetchedSchedule.json();
+          const localStorageSchedules = {data: schedules, updatedAt: new Date()};
+          localStorage.setItem('schedules', JSON.stringify(localStorageSchedules));
+          setSchedules(schedules);
+        } else {
+          setSchedules(schedulesFromLocalStorage.data);
+        }
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setErrorMessage((error as any).message);
+      }
     };
     fetchSchedule();
   }, []);
@@ -76,6 +91,9 @@ const SchedulePage: NextPage = () => {
       </ScrollableBox>
       {
         loading && <Heading animation={true} title='sedang me-load data' />
+      }
+      {
+        errorMessage && <Heading animation={true} title={'gagal mendapatkan data: ' + errorMessage} />
       }
     </>
   );

@@ -29,11 +29,19 @@ const ContactPage: NextPage = () => {
   useEffect(() => {
     const fetchContact = async () => {
       setLoading(true);
-      const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
-      const contacts : Contact[] = await fetchedContact.json();
-      const newFormattedContacts : Contact[] = formatIndoNumber(contacts); 
+      const contactsFromLocalStorage = JSON.parse(localStorage.getItem('contacts') || '{}');
+      const isPassedOneHour = new Date().getTime() > new Date(contactsFromLocalStorage?.updatedAt).getTime() + 3600000;
+      if (!contactsFromLocalStorage.data || isPassedOneHour) {
+        const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
+        const contacts : Contact[] = await fetchedContact.json();
+        const newFormattedContacts : Contact[] = formatIndoNumber(contacts);
+        const localStorageContacts = {data: newFormattedContacts, updatedAt: new Date()};
+        localStorage.setItem('contacts', JSON.stringify(localStorageContacts));
+        setContacts(newFormattedContacts);
+      } else {
+        setContacts(contactsFromLocalStorage.data);
+      }
       setLoading(false);
-      setContacts(newFormattedContacts);
     };
     fetchContact();
   }, []);

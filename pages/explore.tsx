@@ -17,6 +17,7 @@ const Explore: NextPage<Props> = (props) => {
   const [loading, setloading] = useState<boolean>();
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [DetailUniversityIndex, setDetailUniversityIndex] = useState<number>(0);
+  const [lastFetched, setlastFetched] = useState<string>('');
   const [fadeAnimation, setFadeAnimation] = useState(true);
   const handleDetailUniversityIndex = (index : number) => {
     if (index === DetailUniversityIndex) return;
@@ -48,10 +49,12 @@ const Explore: NextPage<Props> = (props) => {
         );
         const dataUniversity = await fetchedUniversity.json();
         const university : University[] = dataUniversity.university;
-        const localStorageContacts = {data: university, updatedAt: new Date()};
-        localStorage.setItem('university', JSON.stringify(localStorageContacts));
+        const localStorageUniversity = {data: university, updatedAt: new Date()};
+        localStorage.setItem('university', JSON.stringify(localStorageUniversity));
         setuniversity(university);
+        setlastFetched(localStorageUniversity.updatedAt.toString());
       } else {
+        setlastFetched(new Date(universityFromLocalStorage.updatedAt).toString());
         setuniversity(universityFromLocalStorage.data);
       }
       setloading(false);
@@ -75,7 +78,7 @@ const Explore: NextPage<Props> = (props) => {
             <Logos data={university} currentIndex={DetailUniversityIndex} onClick={handleDetailUniversityIndex} />
             <Fade>
               <Fade when={fadeAnimation}>
-                <Contents data={university} currentIndex={DetailUniversityIndex} />
+                <Contents data={university} currentIndex={DetailUniversityIndex} globalLastFetched={lastFetched} setUniversity={setuniversity} />
               </Fade>
             </Fade>
             <Heading animation={fadeAnimation} title={university[DetailUniversityIndex].name} />

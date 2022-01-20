@@ -13,7 +13,8 @@ export type University = {
     _id: string,
     name: string,
     imageId: Image,
-    contentId: Content[]
+    contentId: Content[],
+    lastFetched: null | string
 }
 export type UniversityWithoutContent = {
     _id: string,

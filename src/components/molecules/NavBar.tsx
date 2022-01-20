@@ -13,11 +13,11 @@ const links = [
     href: 'https://upsnm-smansaka.web.app/',
     isExternal: true, 
   },
-  {
-    name: 'Pengenalan Panitia',
-    href: '/intro',
-    isExternal: false, 
-  },
+  // {
+  //   name: 'Pengenalan Panitia',
+  //   href: '/intro',
+  //   isExternal: false, 
+  // },
   {
     name: 'Jadwal dan Acara',
     href: '/schedule',

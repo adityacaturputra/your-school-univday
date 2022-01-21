@@ -22,7 +22,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
       );
       const {university} = await fetchedUniversity.json();
       const universityLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');
-      universityLocalStorage.data[currentIndex] = {...university, lastFetched: new Date().toString()};
+      universityLocalStorage.data[currentIndex] = {...university, lastFetched: new Date().toLocaleString()};
       localStorage.setItem('university', JSON.stringify(universityLocalStorage));
       setUniversity(universityLocalStorage.data);
       setIsError(false);
@@ -34,12 +34,12 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
   return (
     <>
       <div className="h-[105vh] mt-[16vh] relative container mx-auto">
-        <div className="scrollup max-h-[100%] overflow-y-auto overflow-x-hidden pt-[16vh] pb-[14vh]">
-          <div className='flex justify-between bg-gradient-to-r from-purple-50 to-pink-50 my-4 mx-3 p-3 rounded'>
+        <div className="scrollup max-h-[100%] overflow-y-auto overflow-x-hidden pt-[16vh] pb-[20vh]">
+          <div className='flex justify-between bg-gradient-to-r text-gray-400 from-purple-50 to-pink-50 my-4 mx-3 p-3 rounded'>
             {
               !isLoading ?
                 <>
-                  <p>Last fetched at {(data[currentIndex]?.lastFetched) || globalLastFetched}</p>
+                  <p>Terakhir diperbarui pada {(data[currentIndex]?.lastFetched) || globalLastFetched}</p>
                   <img onClick={handleRefreshUnivContent(data[currentIndex]._id)} className='h-5 w-5 cursor-pointer' src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-refresh-mintab-for-ios-becris-lineal-becris.png"/>
                 </>
                 :
@@ -51,7 +51,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
           </div>
           {
             data[currentIndex].contentId.map((konten: Content) => (
-              <div key={konten._id} className=" overflow-auto bg-gradient-to-r from-purple-50 to-pink-50 my-4 mb-36 mx-3 p-3 rounded scrollup">
+              <div key={konten._id} className=" overflow-auto bg-gradient-to-r from-purple-50 to-pink-50 my-4 mb-16 mx-3 p-3 rounded scrollup">
                 <h1 className="text-xl font-bold mb-3 text-gray-700">{konten.name}</h1>
                 <div className='ck-content'>
                   {HTMLReactParser(konten.jeroanKonten)}

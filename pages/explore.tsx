@@ -42,8 +42,8 @@ const Explore: NextPage<Props> = (props) => {
     try {
       setloading(true);
       const universityFromLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');
-      const isPassedOneHour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 3600000;
-      if (!universityFromLocalStorage.data || isPassedOneHour) {
+      // const isPassedOneHour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 3600000;
+      if (!universityFromLocalStorage.data /* || isPassedOneHour */) {
         const fetchedUniversity = await fetch(
           'https://admin-your-school-univday.herokuapp.com/api/v1/university'
         );
@@ -52,9 +52,9 @@ const Explore: NextPage<Props> = (props) => {
         const localStorageUniversity = {data: university, updatedAt: new Date()};
         localStorage.setItem('university', JSON.stringify(localStorageUniversity));
         setuniversity(university);
-        setlastFetched(localStorageUniversity.updatedAt.toString());
+        setlastFetched(localStorageUniversity.updatedAt.toLocaleString());
       } else {
-        setlastFetched(new Date(universityFromLocalStorage.updatedAt).toString());
+        setlastFetched(new Date(universityFromLocalStorage.updatedAt).toLocaleString());
         setuniversity(universityFromLocalStorage.data);
       }
       setloading(false);
@@ -90,7 +90,7 @@ const Explore: NextPage<Props> = (props) => {
       }
       {
         loading &&
-        <Heading animation={fadeAnimation} title={'sedang me-load data'} />
+        <Heading animation={fadeAnimation} title={'sedang memuat data'} />
       }
     </>
   );

@@ -7,7 +7,7 @@ import Fade from 'react-reveal/Fade';
 const links = [
   {
     name: 'Explore',
-    href: '/start',
+    href: '/explore',
     isExternal: false, 
   },
   {

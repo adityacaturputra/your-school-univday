@@ -71,7 +71,7 @@ const SchedulePage: NextPage = () => {
         }
       </ScrollableBox>
       {
-        loading && <Heading animation={true} title='sedang me-load data' />
+        loading && <Heading animation={true} title='sedang memuat data' />
       }
       {
         errorMessage && <Heading animation={true} title={'gagal mendapatkan data: ' + errorMessage} />

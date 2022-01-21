@@ -77,7 +77,7 @@ const ContactPage: NextPage = () => {
         }
       </ScrollableBox>
       {
-        loading && <Heading animation={true} title='sedang me-load data' />
+        loading && <Heading animation={true} title='sedang memuat data' />
       }
     </>
   );

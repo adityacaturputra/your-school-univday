@@ -7,6 +7,8 @@ export type Content = {
     _id: string,
     name: string,
     jeroanKonten: string,
+    createdAt: string,
+    updatedAt: string
 }
 
 export type University = {

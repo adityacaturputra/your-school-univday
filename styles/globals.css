@@ -79,6 +79,11 @@ a {
   border-collapse: revert;
 }
 
+.ck-content td, .ck-content tr {
+  /* text-align: center; */
+  padding-left: 6px;
+}
+
 .ck-content h1,
 .ck-content h2,
 .ck-content h3,

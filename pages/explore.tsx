@@ -42,6 +42,7 @@ const Explore: NextPage<Props> = (props) => {
     try {
       setloading(true);
       const universityFromLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');
+      setuniversity(universityFromLocalStorage.data);
       const isPassed12Hour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 12*3600000;
       if (!universityFromLocalStorage.data || isPassed12Hour ) {
         const fetchedUniversity = await fetch(

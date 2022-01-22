@@ -32,7 +32,6 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
     setIsLoading(false);
   };
   data[currentIndex].contentId = data[currentIndex].contentId.sort((a, b) => Date.parse(a.createdAt) - Date.parse(b.createdAt));
-  console.log(data[currentIndex].contentId);
   return (
     <>
       <div className="h-[105vh] mt-[16vh] relative container mx-auto">

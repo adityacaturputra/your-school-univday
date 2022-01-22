@@ -42,8 +42,8 @@ const Explore: NextPage<Props> = (props) => {
     try {
       setloading(true);
       const universityFromLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');
-      // const isPassedOneHour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 3600000;
-      if (!universityFromLocalStorage.data /* || isPassedOneHour */) {
+      const isPassed12Hour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 12*3600000;
+      if (!universityFromLocalStorage.data || isPassed12Hour ) {
         const fetchedUniversity = await fetch(
           'https://admin-your-school-univday.herokuapp.com/api/v1/university'
         );

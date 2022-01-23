@@ -36,7 +36,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
     <>
       <div className="h-[105vh] mt-[16vh] relative container mx-auto">
         <div className="scrollup max-h-[100%] overflow-y-auto overflow-x-hidden pt-[16vh] pb-[20vh]">
-          <div className='flex justify-between bg-gradient-to-r text-gray-400 from-purple-50 to-pink-50 my-4 mx-3 p-3 rounded'>
+          <div className='flex justify-between bg-gradient-to-r from-white to-gray-50 text-gray-400 my-4 mx-3 p-3 rounded'>
             {
               !isLoading ?
                 <>
@@ -52,7 +52,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
           </div>
           {
             data[currentIndex].contentId.map((konten: Content) => (
-              <div key={konten._id} className=" overflow-auto bg-gradient-to-r from-purple-50 to-pink-50 my-4 mb-16 mx-3 p-3 rounded scrollup">
+              <div key={konten._id} className=" overflow-auto bg-gradient-to-r from-white to-gray-50 my-4 mb-16 mx-3 p-3 rounded scrollup">
                 <h1 className="text-xl font-bold mb-3 text-gray-700">{konten.name}</h1>
                 <div className='ck-content'>
                   {HTMLReactParser(konten.jeroanKonten)}

@@ -45,7 +45,7 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className="flex flex-wrap items-center justify-between px-2 py-[1px] bg-gradient-to-r from-purple-100 to-white-100 mb-3 fixed top-0 z-20 w-screen">
+      <nav className="flex flex-wrap items-center justify-between px-2 py-[1px] backdrop-blur-sm mb-3 fixed top-0 z-20 w-screen">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">

@@ -53,12 +53,12 @@ const ContactPage: NextPage = () => {
       </Head>
       <ScrollableBox>
         <Fade>
-          <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold m-8 ml-4 px-6 py-2 w-max text-gray-700 border-b-2 border-gray-700 bg-gray-200 rounded'>Contact Person</h1>
+          <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold m-8 ml-4 px-6 py-2 text-gray-700 border-b-2 border-gray-700 bg-gray-50 rounded'>Contact Person</h1>
         </Fade>
         { 
           contacts?.map((contact, i) => (
             <Fade key={contact._id} delay={250*i}>
-              <div className='p-5 m-4 max-w-max flex hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 bg-purple-200 rounded bg-opacity-30 hover:bg-opacity-100 text-2xl transition duration-500 ease-in-out shadow-inner'>
+              <div className='p-5 m-4 flex min-h-[148px] cursor-default hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 rounded hover:bg-white duration-500 ease-in-out'>
                 <a href={`https://wa.me/${contact.contact}`} target="_blank" rel="noopener noreferrer">
                   <div>
                     <p className='text-xl font-bold text-gray-700'>{contact.name}</p>

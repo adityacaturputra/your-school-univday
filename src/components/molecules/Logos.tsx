@@ -11,7 +11,7 @@ interface Props {
 const Logos : React.FC<Props> = ({data, currentIndex, onClick}) => {
   
   return (
-    <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap z-10 fixed w-full bottom-0">
+    <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap z-10 fixed w-full bottom-0 backdrop-blur-sm">
       {data.map((university: University, index: number) => (
         <>
           <Fade bottom key={university._id} when={index !== currentIndex}>

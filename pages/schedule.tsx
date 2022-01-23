@@ -37,6 +37,10 @@ const SchedulePage: NextPage = () => {
       } catch (error) {
         setLoading(false);
         setErrorMessage((error as any).message);
+        const timeoutErrorMessage = setTimeout(() => {
+          setErrorMessage('');
+        }, 1000);
+        return timeoutErrorMessage;
       }
     };
     fetchSchedule();

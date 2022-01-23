@@ -61,6 +61,11 @@ const Explore: NextPage<Props> = (props) => {
       setloading(false);
     } catch (error) {
       setErrorMessage((error as any).message);
+      setloading(false);
+      const timeoutErrorMessage = setTimeout(() => {
+        setErrorMessage('');
+      }, 1000);
+      return timeoutErrorMessage;
     }
   };
 

@@ -24,23 +24,34 @@ const formatIndoNumber = (contacts: Contact[]) : Contact[] => {
 const ContactPage: NextPage = () => {
   const [contacts, setContacts] = useState<Contact[] | null>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
   
   
   useEffect(() => {
     const fetchContact = async () => {
-      setLoading(true);
-      const contactsFromLocalStorage = JSON.parse(localStorage.getItem('contacts') || '{}');
-      setContacts(contactsFromLocalStorage.data);
-      const isPassed12Hour = new Date().getTime() > new Date(contactsFromLocalStorage?.updatedAt).getTime() + 3600000 * 12;
-      if (!contactsFromLocalStorage.data || isPassed12Hour) {
-        const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
-        const contacts : Contact[] = await fetchedContact.json();
-        const newFormattedContacts : Contact[] = formatIndoNumber(contacts);
-        const localStorageContacts = {data: newFormattedContacts, updatedAt: new Date()};
-        localStorage.setItem('contacts', JSON.stringify(localStorageContacts));
-        setContacts(newFormattedContacts);
-      } else {
+      try {
+        setLoading(true);
+        const contactsFromLocalStorage = JSON.parse(localStorage.getItem('contacts') || '{}');
         setContacts(contactsFromLocalStorage.data);
+        const isPassed12Hour = new Date().getTime() > new Date(contactsFromLocalStorage?.updatedAt).getTime() + 3600000 * 12;
+        if (!contactsFromLocalStorage.data || isPassed12Hour) {
+          const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
+          const contacts : Contact[] = await fetchedContact.json();
+          const newFormattedContacts : Contact[] = formatIndoNumber(contacts);
+          const localStorageContacts = {data: newFormattedContacts, updatedAt: new Date()};
+          localStorage.setItem('contacts', JSON.stringify(localStorageContacts));
+          setContacts(newFormattedContacts);
+        } else {
+          setContacts(contactsFromLocalStorage.data);
+        }
+        setLoading(false);
+      } catch (error) {
+        setErrorMessage((error as any).message);
+        setLoading(false);
+        const timeoutErrorMessage = setTimeout(() => {
+          setErrorMessage('');
+        }, 1000);
+        return timeoutErrorMessage;
       }
       setLoading(false);
     };
@@ -79,6 +90,10 @@ const ContactPage: NextPage = () => {
       </ScrollableBox>
       {
         loading && <Heading animation={true} title='sedang memuat data' />
+      }
+      {
+        errorMessage && 
+        <Heading animation={true} title={'gagal mendapatkan data: ' + errorMessage} />
       }
     </>
   );

@@ -17,7 +17,11 @@ const getDate = (strDate : string) => {
 
 const formatDate = (strDate: string) => {
   const {date, time, day} = getDate(strDate);
-  return `${time} - ${day}, ${date.dayInMonth} ${date.month} ${date.year}`;
+  
+  return {
+    time: `${time}`,
+    date: `${day}, ${date.dayInMonth} ${date.month} ${date.year}`
+  };
 };
 
 export default formatDate;

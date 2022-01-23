@@ -31,6 +31,7 @@ export type Schedule = {
     universityId: UniversityWithoutContent | null,
     timeStartDate: string,
     timeEndDate: string,
+    place: string
 }
 
 export type Contact = {

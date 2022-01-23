@@ -41,7 +41,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
               !isLoading ?
                 <>
                   <p>Terakhir diperbarui pada {(data[currentIndex]?.lastFetched) || globalLastFetched}</p>
-                  <img onClick={handleRefreshUnivContent(data[currentIndex]._id)} className='h-5 w-5 cursor-pointer' src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-refresh-mintab-for-ios-becris-lineal-becris.png"/>
+                  <img onClick={handleRefreshUnivContent(data[currentIndex]._id)} className='cursor-pointer' width="20px" height="20px" src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-refresh-mintab-for-ios-becris-lineal-becris.png" alt='refresh-content'/>
                 </>
                 :
                 <p>sedang memperbarui data</p>

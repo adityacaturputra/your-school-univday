@@ -52,7 +52,7 @@ export default function Navbar() {
               <a
                 className="text-lg font-bold leading-relaxed inline-block whitespace-nowrap uppercase text-gray-700"
               >
-                <img src='./images/univday-logo.png' style={{height: '46px'}} />
+                <img src='./images/univday-logo.png' height='46px' width="82px" alt='univday-logo' />
               </a>
             </Link>
             <button

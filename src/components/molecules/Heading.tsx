@@ -8,11 +8,15 @@ interface Props {
 const Heading : React.FC<Props> = ({title, animation}) => {
   
   return (
-    <h1 className="text-2xl font-bold text-center backdrop-blur-sm p-2 text-gray-700 min-w-full fixed top-[46px]">
-      <Fade when={animation}>
-        {title}
-      </Fade>
-    </h1>
+    <>
+      <div className='min-w-full fixed lg:top-[53px] top-[46.14px] bg-opacity-30 bg-gray-300'>
+        <h1 className="text-2xl font-bold text-center text-gray-700 p-2 backdrop-blur-sm">
+          <Fade when={animation}>
+            {title}
+          </Fade>
+        </h1>
+      </div>
+    </>
   );
 };
 

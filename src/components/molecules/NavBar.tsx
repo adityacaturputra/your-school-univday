@@ -1,6 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import openInNewTab from '../../utils/openInNewTab';
 
 const links = [
   {
@@ -39,7 +40,7 @@ export default function Navbar() {
       router.push(`${url}`);
     }
     else {
-      window.location.assign(url);
+      openInNewTab(url);
     }
     
   };

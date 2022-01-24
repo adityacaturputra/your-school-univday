@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
 import Button from '../src/components/atoms/Button';
 import Fade from 'react-reveal/Fade';
+import openInNewTab from '../src/utils/openInNewTab';
 
 const links = [
   {
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
       router.push(`${url}`);
     }
     else {
-      window.location.assign(url);
+      openInNewTab(url);
     }
     
   };

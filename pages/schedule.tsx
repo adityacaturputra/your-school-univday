@@ -55,8 +55,8 @@ const SchedulePage: NextPage = () => {
           <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold m-8 ml-4 px-6 py-2 text-gray-700 border-b-2 border-gray-700 bg-gray-50 rounded'>Jadwal dan Acara</h1>
         </Fade>
         { 
-          schedules?.map((schedule, i) => (
-            <Fade key={schedule._id} delay={250*i}>
+          schedules?.sort((a, b) => new Date(a.timeStartDate).getTime() - new Date(b.timeStartDate).getTime()).map((schedule) => (
+            <Fade key={schedule._id}>
               <div className='p-5 m-4 flex min-h-[148px] cursor-default hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 rounded hover:bg-white duration-500 ease-in-out'>
                 {
                   schedule.universityId?.imageId.imageUrl ?

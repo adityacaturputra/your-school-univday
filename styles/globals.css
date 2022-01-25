@@ -24,32 +24,36 @@ body {
 
 }
 
-/*
+
 ::-webkit-scrollbar {
   width: 10px;
 }
-*/
 
 
 /* Track */
-/*
+
 ::-webkit-scrollbar-track {
 }
-*/
+
 
 /* Handle */
-/*
+
 ::-webkit-scrollbar-thumb {
   background: #888; 
 }
-*/
+
 
 /* Handle on hover */
-/*
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 } 
-*/
+
+
+/* handle tap color at mobile devices */
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 a {
   color: blue;
@@ -70,6 +74,10 @@ a {
 .ck-content p,
 .ck-content pre {
   margin: revert;
+}
+
+h2, h3, h4, h5, h6, p, li {
+  color: rgba(55, 65, 81, .98)
 }
 
 .ck-content img {

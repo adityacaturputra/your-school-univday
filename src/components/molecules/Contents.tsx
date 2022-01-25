@@ -43,7 +43,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
                   <img onClick={handleRefreshUnivContent(data[currentIndex]._id)} className='w-5 h-5 cursor-pointer' width="20px" height="20px" src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-refresh-mintab-for-ios-becris-lineal-becris.png" alt='refresh-content'/>
                 </>
                 :
-                <p>sedang memperbarui data</p>
+                <p className='text-gray-400 text-xs sm:text-sm'>Sedang memperbarui data</p>
             }
             {
               isError && <p>Gagal memperbarui data</p>

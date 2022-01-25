@@ -48,15 +48,18 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Univday | Menu</title>
+        <title>University Day SMANSAKA</title>
       </Head>
-      {
-        links.map((link, index) => (
-          <Fade bottom key={link.href} delay={index*200}>
-            <Button title={link.name} className="text-center flex justify-center mt-5 mx-[10vw]" onClick={handleButtonClicked(link.href, link.isExternal)} />
-          </Fade>
-        ))
-      }
+      <img className='relative left-1/2 translate-x-[-50%] mb-10' src="/images/univday-logo.png" height="100%" width="50%" alt="univday-logo" />
+      <div className='lg:flex w-screen gap-2 justify-center'>
+        {
+          links.map((link, index) => (
+            <Fade key={link.href} delay={index*200}>
+              <Button title={link.name} className="text-center flex justify-center" onClick={handleButtonClicked(link.href, link.isExternal)} />
+            </Fade>
+          ))
+        }
+      </div>
     </>
   );
 };

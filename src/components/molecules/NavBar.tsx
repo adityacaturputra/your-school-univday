@@ -46,7 +46,7 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className="px-2 py-[1px] mb-3 bg-opacity-30 bg-gray-300 fixed top-0 z-20 w-screen">
+      <nav className="px-2 py-[1px] mb-3 bg-opacity-70 bg-white fixed top-0 z-20 w-screen">
         <div className='flex flex-wrap items-center justify-between backdrop-blur-sm'>
           <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -58,10 +58,21 @@ export default function Navbar() {
                 </a>
               </Link>
               <button
-                className="cursor-pointer text-xl leading-none my-1 px-3 py-1 border-solid border-8 border-gray-700 rounded-full  block lg:hidden outline-none focus:outline-none"
+                className="cursor-pointer text-xl leading-none my-1 px-3 py-1 border-gray-700 rounded-full block lg:hidden outline-none focus:outline-none"
                 type="button"
                 onClick={() => setNavbarOpen(!navbarOpen)}
               >
+                {
+                  navbarOpen ?
+
+                    <div className='rotate-45 -translate-x-2/4 scale-150'>+</div>
+                    :
+                    <div className="space-y-2">
+                      <div className="w-8 h-0.5 bg-gray-600"></div>
+                      <div className="w-8 h-0.5 bg-gray-600"></div>
+                      <div className="w-8 h-0.5 bg-gray-600"></div>
+                    </div>
+                }
               </button>
             </div>
             <div

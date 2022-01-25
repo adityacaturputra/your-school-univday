@@ -12,7 +12,7 @@ const Logos : React.FC<Props> = ({data, currentIndex, onClick}) => {
   
   return (
     <div className="fixed w-full backdrop-blur-sm bottom-0 z-10">
-      <div className='overflow-x-scroll overflow-y-hidden whitespace-nowrap bg-opacity-30 bg-gray-300'>
+      <div className='overflow-x-scroll overflow-y-hidden whitespace-nowrap bg-opacity-70 bg-white'>
         {data.map((university: University, index: number) => (
           <>
             <Fade bottom key={university._id} when={index !== currentIndex}>

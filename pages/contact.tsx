@@ -68,7 +68,7 @@ const ContactPage: NextPage = () => {
         </Fade>
         { 
           contacts?.map((contact, i) => (
-            <Fade key={contact._id} delay={250*i}>
+            <Fade key={contact._id}>
               <div className='p-5 m-4 flex min-h-[148px] cursor-default hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 rounded hover:bg-white duration-500 ease-in-out'>
                 <a href={`https://wa.me/${contact.contact}`} target="_blank" rel="noopener noreferrer">
                   <div>

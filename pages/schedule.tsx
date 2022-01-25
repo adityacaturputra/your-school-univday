@@ -8,7 +8,23 @@ import { Schedule } from '../src/types/University';
 import Heading from '../src/components/molecules/Heading';
 import formatDate from '../src/utils/dateFormatter';
 
+const sortSchedules = (schedules: Schedule[]) => {
+  return schedules.sort((a, b) => new Date(a.timeStartDate).getTime() - new Date(b.timeStartDate).getTime());
+};
 
+const serveSchedules = (schedules: Schedule[]) => {
+  schedules = schedules.map(schedule => {
+    const timeNow = new Date().getTime();
+    const timeStart = new Date(schedule.timeStartDate).getTime() - 7 * 3600000;
+    const timeEnd = new Date(schedule.timeEndDate).getTime() - 7 * 3600000;
+    const isLive = timeNow > timeStart && timeNow < timeEnd;
+    schedule.isLive = isLive;    
+
+    return schedule;
+  });
+
+  return sortSchedules(schedules);
+};
 
 
 const SchedulePage: NextPage = () => {
@@ -29,9 +45,9 @@ const SchedulePage: NextPage = () => {
           const {schedule : schedules} = await fetchedSchedule.json();
           const localStorageSchedules = {data: schedules, updatedAt: new Date()};
           localStorage.setItem('schedules', JSON.stringify(localStorageSchedules));
-          setSchedules(schedules);
+          setSchedules(serveSchedules(schedules));
         } else {
-          setSchedules(schedulesFromLocalStorage.data);
+          setSchedules(serveSchedules(schedulesFromLocalStorage.data));
         }
         setLoading(false);
       } catch (error) {
@@ -52,12 +68,12 @@ const SchedulePage: NextPage = () => {
       </Head>
       <ScrollableBox>
         <Fade>
-          <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold m-8 ml-4 px-6 py-2 text-gray-700 border-b-2 border-gray-700 bg-gray-50 rounded'>Jadwal dan Acara</h1>
+          <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold m-8 ml-4 px-6 py-2 text-gray-700 border-b-2 border-gray-700 bg-gradient-to-r from-white to-gray-50'>Jadwal dan Acara</h1>
         </Fade>
         { 
-          schedules?.sort((a, b) => new Date(a.timeStartDate).getTime() - new Date(b.timeStartDate).getTime()).map((schedule) => (
+          schedules?.map((schedule) => (
             <Fade key={schedule._id}>
-              <div className='p-5 m-4 flex min-h-[148px] cursor-default hover:text-gray-700 text-gray-50 border-b-2 hover:border-gray-700 rounded hover:bg-white duration-500 ease-in-out'>
+              <div className={`p-5 m-4 mb-7 flex min-h-[148px] cursor-default rounded ${schedule.isLive &&'bg-gradient-to-r from-white to-gray-50'}`}>
                 {
                   schedule.universityId?.imageId.imageUrl ?
                     <img className='mr-4 h-[75px] w-[75px] sm:w-[108px] md:h-[108px] rounded' src={schedule.universityId?.imageId.imageUrl} alt="" />

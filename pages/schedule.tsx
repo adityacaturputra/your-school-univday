@@ -65,21 +65,19 @@ const SchedulePage: NextPage = () => {
                     <img className='mr-4 h-[75px] w-[75px] sm:w-[108px] md:h-[108px] rounded' src={schedule.universityId?.imageId.imageUrl} alt="" />
                 }
                 <div>
+                  <p className='font-bold text-lg text-gray-700'>{schedule.name}</p>
                   <div className='lg:flex gap-4 items-center'>
-                    <p className='font-bold text-lg text-gray-700'>{schedule.universityId?.name || 'Umum'}</p>
-                    <p className='text-base font-semibold text-gray-700'>{schedule.name}</p>
-                    <div className='flex'>
-                      <p className='text-sm text-gray-500'>{schedule.place}</p>
-                      <img className='ml-2' src="/images/place.svg" width='15px' alt="" />
-                    </div>
+                    <p className='text-base font-semibold text-gray-500'>{schedule.universityId?.name || 'Umum'}</p>
+                  </div>
+                  <div className='flex'>
+                    <img className='mr-1' src="/images/place.svg" width='15px' alt="" />
+                    <p className='text-sm text-gray-500'>{schedule.place}</p>
                   </div>
                   <div className='flex items-center mt-3'>
-                    <div>
-                      <p className='text-gray-700 text-sm'>{formatDate(schedule.timeStartDate).date}</p>
-                      <p className='text-gray-700 text-sm'>{formatDate(schedule.timeStartDate).time} - {formatDate(schedule.timeEndDate).time}</p>
-                    </div>
-                    <img className='ml-4' src="/images/time.svg" alt="" />
+                    <img className='mr-1' src="/images/time.svg" width='15px' alt="" />
+                    <p className='text-gray-700 text-sm font-bold'>{formatDate(schedule.timeStartDate).time} - {formatDate(schedule.timeEndDate).time}</p>
                   </div>
+                  <p className='text-gray-700 text-sm'>{formatDate(schedule.timeStartDate).date}</p>
                 </div>
               </div>
             </Fade>

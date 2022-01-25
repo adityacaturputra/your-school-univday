@@ -16,6 +16,7 @@ export type University = {
     name: string,
     imageId: Image,
     contentId: Content[],
+    priorityLevel: number,
     lastFetched: null | string
 }
 export type UniversityWithoutContent = {

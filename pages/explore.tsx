@@ -49,7 +49,7 @@ const Explore: NextPage<Props> = (props) => {
           'https://admin-your-school-univday.herokuapp.com/api/v1/university'
         );
         const dataUniversity = await fetchedUniversity.json();
-        const university : University[] = dataUniversity.university;
+        const university : University[] = dataUniversity.university.sort((a: University, b: University) => b.priorityLevel - a.priorityLevel);
         const localStorageUniversity = {data: university, updatedAt: new Date()};
         localStorage.setItem('university', JSON.stringify(localStorageUniversity));
         setuniversity(university);

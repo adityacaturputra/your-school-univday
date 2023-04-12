@@ -17,7 +17,7 @@ const Contents : React.FC<Props> = ({data, currentIndex, globalLastFetched, setU
     setIsLoading(true);
     try {
       const fetchedUniversity = await fetch(
-        `https://admin-your-school-univday.herokuapp.com/api/v1/university/${id}`
+        `https://admin-smansaka-your-school-univday-2021.up.railway.app/api/v1/university/${id}`
       );
       const {university} = await fetchedUniversity.json();
       const universityLocalStorage = JSON.parse(localStorage.getItem('university') || '{}');

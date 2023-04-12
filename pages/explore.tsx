@@ -46,7 +46,7 @@ const Explore: NextPage<Props> = (props) => {
       const isPassed12Hour = new Date().getTime() > new Date(universityFromLocalStorage?.updatedAt).getTime() + 12*3600000;
       if (!universityFromLocalStorage.data || isPassed12Hour ) {
         const fetchedUniversity = await fetch(
-          'https://admin-your-school-univday.herokuapp.com/api/v1/university'
+          'https://admin-smansaka-your-school-univday-2021.up.railway.app/api/v1/university'
         );
         const dataUniversity = await fetchedUniversity.json();
         const university : University[] = dataUniversity.university.sort((a: University, b: University) => b.priorityLevel - a.priorityLevel);
@@ -105,7 +105,7 @@ const Explore: NextPage<Props> = (props) => {
 // export async function getServerSideProps() {
 //   try {
 //     const res = await fetch(
-//       'https://admin-your-school-univday.herokuapp.com/api/v1/university/all'
+//       'https://admin-smansaka-your-school-univday-2021.up.railway.app/api/v1/university/all'
 //     );
 //     const dataUniversity = await res.json();
 //     return {

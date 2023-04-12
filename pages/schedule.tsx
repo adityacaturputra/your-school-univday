@@ -41,7 +41,7 @@ const SchedulePage: NextPage = () => {
         setSchedules(schedulesFromLocalStorage.data);
         const isPassed12Hour = new Date().getTime() > new Date(schedulesFromLocalStorage?.updatedAt).getTime() + 3600000 * 12;
         if (!schedulesFromLocalStorage.data || isPassed12Hour) {
-          const fetchedSchedule = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/schedule');
+          const fetchedSchedule = await fetch('https://admin-smansaka-your-school-univday-2021.up.railway.app/api/v1/schedule');
           const {schedule : schedules} = await fetchedSchedule.json();
           const localStorageSchedules = {data: schedules, updatedAt: new Date()};
           localStorage.setItem('schedules', JSON.stringify(localStorageSchedules));

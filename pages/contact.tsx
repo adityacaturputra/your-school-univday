@@ -35,7 +35,7 @@ const ContactPage: NextPage = () => {
         setContacts(contactsFromLocalStorage.data);
         const isPassed12Hour = new Date().getTime() > new Date(contactsFromLocalStorage?.updatedAt).getTime() + 3600000 * 12;
         if (!contactsFromLocalStorage.data || isPassed12Hour) {
-          const fetchedContact = await fetch('https://admin-your-school-univday.herokuapp.com/api/v1/contact');
+          const fetchedContact = await fetch('https://admin-smansaka-your-school-univday-2021.up.railway.app/api/v1/contact');
           const contacts : Contact[] = await fetchedContact.json();
           const newFormattedContacts : Contact[] = formatIndoNumber(contacts);
           const localStorageContacts = {data: newFormattedContacts, updatedAt: new Date()};
